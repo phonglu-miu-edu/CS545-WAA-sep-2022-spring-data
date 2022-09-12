@@ -19,6 +19,9 @@ public class Product {
     @ManyToOne
     private Category category;
 
+//    @JoinTable(name = "product_product_type",
+//            joinColumns = @JoinColumn(name = "product_id"),
+//            inverseJoinColumns = @JoinColumn(name = "product_type_id"))
     @ManyToMany
     private List<ProductType> productTypes;
 

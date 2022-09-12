@@ -15,7 +15,8 @@ public class Address {
     private String zip;
     private String city;
 
-//    @OneToOne
-//    private User user;
+    @JoinColumn(name = "user_id")
+    @OneToOne
+    private User user;
 
 }

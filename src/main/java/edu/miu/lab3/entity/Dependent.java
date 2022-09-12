@@ -10,10 +10,12 @@ public class Dependent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int dependentId;
+    @Column(name = "dependent_id")
+    private int id;
     private String fname;
     private String relationship;
 
+    @JoinColumn(name = "employee_id")
     @ManyToOne
     private Employee employee;
 

@@ -18,8 +18,7 @@ public class User {
     private String firstName;
     private String lastName;
 
-    @OneToMany
-    @JoinTable
+    @OneToMany(mappedBy = "user")
     private List<Review> reviews;
 
     @OneToOne

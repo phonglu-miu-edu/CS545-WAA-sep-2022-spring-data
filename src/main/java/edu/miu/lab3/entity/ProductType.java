@@ -14,7 +14,7 @@ public class ProductType {
     private int id;
     private String name;
 
-//    @ManyToMany
-//    private List<Product> products;
+    @ManyToMany(mappedBy = "productTypes")
+    private List<Product> products;
 
 }

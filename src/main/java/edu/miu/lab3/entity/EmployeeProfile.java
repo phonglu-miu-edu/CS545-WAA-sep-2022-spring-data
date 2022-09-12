@@ -2,10 +2,7 @@ package edu.miu.lab3.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -13,8 +10,13 @@ public class EmployeeProfile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int empProfileId;
+    @Column(name = "emp_profile_id")
+    private int id;
     private String gender;
     private int birthYear;
+
+    @JoinColumn(name = "employee_id")
+    @OneToOne
+    private Employee employee;
 
 }

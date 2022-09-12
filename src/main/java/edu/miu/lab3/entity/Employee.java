@@ -11,14 +11,21 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeId;
-    private String fullName;
+    @Column(name = "employee_id")
+    private int id;
+    private String fullname;
     private int salary;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL)
     private EmployeeProfile employeeProfile;
 
     @OneToMany(mappedBy = "employee")
     private List<Dependent> dependents;
+
+    @JoinTable(name = "works_on",
+            joinColumns = @JoinColumn(name = "employee_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id"))
+    @ManyToMany
+    private List<Project> projects;
 
 }
