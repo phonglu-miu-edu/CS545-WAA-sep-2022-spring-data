@@ -19,7 +19,6 @@ public class Product {
     @ManyToOne
     private Category category;
 
-    @JoinColumn
     @ManyToMany
     private List<ProductType> productTypes;
 

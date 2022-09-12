@@ -6,14 +6,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class Review {
+public class Project {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String comment;
+    private int projectId;
+    private String name;
+    private String location;
 
     @ManyToOne
-    private User user;
+    private Department department;
 
 }

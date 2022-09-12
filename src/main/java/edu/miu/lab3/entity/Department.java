@@ -7,14 +7,15 @@ import java.util.List;
 
 @Data
 @Entity
-public class ProductType {
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
+    private int departmentId;
+    private String departmentName;
 
-//    @ManyToMany
-//    private List<Product> products;
+    @JoinTable(name = "works_on")
+    @OneToMany
+    private List<Project> projects;
 
 }

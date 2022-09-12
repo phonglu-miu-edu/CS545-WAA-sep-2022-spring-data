@@ -19,8 +19,13 @@ public class User {
     private String lastName;
 
     @OneToMany
+    @JoinTable
     private List<Review> reviews;
 
     @OneToOne
     private Address address;
+
+    @Embedded
+    Audit audit;
+
 }

@@ -15,7 +15,7 @@ public class Address {
     private String zip;
     private String city;
 
-    @OneToOne
-    private User user;
+//    @OneToOne
+//    private User user;
 
 }
