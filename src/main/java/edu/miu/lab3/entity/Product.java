@@ -3,6 +3,7 @@ package edu.miu.lab3.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,5 +18,9 @@ public class Product {
 
     @ManyToOne
     private Category category;
+
+    @JoinColumn
+    @ManyToMany
+    private List<ProductType> productTypes;
 
 }

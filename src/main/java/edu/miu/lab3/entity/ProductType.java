@@ -3,19 +3,18 @@ package edu.miu.lab3.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
-public class Address {
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String street;
-    private String zip;
-    private String city;
+    private String name;
 
-    @OneToOne
-    private User user;
+    @ManyToMany
+    private List<Product> products;
 
 }
